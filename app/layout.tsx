@@ -33,8 +33,8 @@ export default function RootLayout({
         <Toaster position="top-center" />
         {/* Midtrans Snap Script - Sandbox */}
         <Script className="z-9999"
-          src="https://app.midtrans.com/snap/snap.js"
-          data-client-key={process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY || "Mid-client-Tw7Lakz7eoOH0LIs"}
+          src={process.env.NEXT_PUBLIC_MIDTRANS_SNAP_URL || "https://app.midtrans.com/snap/snap.js"}
+          data-client-key={process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY || ""}
           strategy="lazyOnload"
         />
       </body>

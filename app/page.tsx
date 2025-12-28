@@ -138,7 +138,7 @@ export default function Home() {
         timestamp: new Date().toISOString()
       };
 
-      const response = await axios.post('http://localhost:4000/api/v1/orders', payload);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/orders`, payload);
 
       console.log(payload);
       console.log(response);
