@@ -117,7 +117,7 @@ export default function Home() {
   };
 
 
-  const handleCheckout = async (data: { name: string; table_number: string; payment_method: string }) => {
+  const handleCheckout = async (data: { name: string; table_number: string; payment_method: string, email: string }) => {
     setIsCheckoutLoading(true);
 
     try {

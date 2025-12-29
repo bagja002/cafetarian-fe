@@ -26,6 +26,7 @@ export type CheckoutData = {
     name: string;
     table_number: string;
     payment_method: "Cash" | "QRIS" | "Transfer";
+    email: string;
 };
 
 interface CartReviewProps {
@@ -53,7 +54,8 @@ export function CartReviewDrawer({
     const [formData, setFormData] = useState<CheckoutData>({
         name: "",
         table_number: "",
-        payment_method: "QRIS"
+        payment_method: "QRIS",
+        email: ""
     });
 
     // Reset step when drawer closes
@@ -195,6 +197,18 @@ export function CartReviewDrawer({
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                     />
                                 </div>
+                                <div className="space-y-3">
+                                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                        Email
+                                    </label>
+                                    <Input
+                                        placeholder="Enter your email"
+                                        className="h-12 rounded-xl"
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                    />
+                                </div>
+
 
                                 <div className="space-y-3">
                                     <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
